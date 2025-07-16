@@ -4,59 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Steffan Jones | Portfolio</title>
-  <style>
-    :root {
-      --accent: #3b82f6;
-      --accent-hover: #2563eb; /* slightly darker */
-      --bg: #f3f4f6;
-      --text: #111827;
-      --muted: #6b7280;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      background:var(--bg);
-      background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.05) 0 2px,transparent 2px 28px);
-      color:var(--text);
-      line-height:1.6;
-      min-height:100vh;
-      display:flex;align-items:flex-start;justify-content:center;
-      padding:2rem 1rem;
-    }
-    .container{background:#fff;border-radius:1.25rem;box-shadow:0 10px 25px rgba(0,0,0,.05);width:100%;max-width:900px;overflow:hidden}
-    header{padding:4rem 1rem 3rem;text-align:center}
-    .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);display:block;margin:0 auto 1.5rem}
-    header h1{font-size:2.5rem;font-weight:700;margin-bottom:.5rem}
-    header p{font-size:1.25rem;color:var(--muted)}
-    nav ul{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;list-style:none;margin-top:1.5rem}
-    nav a{display:inline-block;text-decoration:none;font-weight:500;color:var(--text);transition:transform .2s,color .2s}
-    nav a:hover{color:var(--accent);transform:scale(1.1)}
+  <link rel="stylesheet" href="styles.css" />
 
-    main section{padding:4rem 1rem;max-width:800px;margin:auto}
-    h2{font-size:1.75rem;margin-bottom:1rem}
-
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-    .card{background:#fff;border-radius:.75rem;padding:1.25rem 1.5rem;box-shadow:0 6px 16px rgba(0,0,0,.04);transform:translateY(30px);opacity:0;transition:transform .45s ease-out,opacity .45s ease-out,box-shadow .2s ease}
-    .js-enabled .card.visible{transform:translateY(0);opacity:1}
-    .card:hover{box-shadow:0 10px 25px rgba(0,0,0,.08);transform:translateY(-4px) scale(1.02)}
-    .card-title{font-weight:600}
-    .card-links{margin-top:.5rem}
-    .card-links a{color:var(--accent);text-decoration:none;font-size:.875rem;margin-right:.5rem;transition:transform .2s}
-    .card-links a:hover{transform:scale(1.05)}
-
-    .skills span{display:inline-block;border:1px solid var(--accent);border-radius:999px;padding:.25rem .75rem;margin:.25rem;font-size:.9rem;transition:transform .2s,background .2s}
-    .skills span:hover{transform:scale(1.05);background:var(--accent);color:#fff}
-
-    /* button style */
-    .btn{display:inline-block;padding:.6rem 1.25rem;background:var(--accent);color:#fff;border-radius:.5rem;font-weight:500;text-decoration:none;transition:transform .2s,background .2s}
-    .btn:hover{background:var(--accent-hover);transform:scale(1.05)}
-
-    /* center contact section */
-    #contact{text-align:center}
-    #contact p{margin-bottom:.75rem}
-
-    footer{text-align:center;padding:2rem 1rem;font-size:.875rem;color:var(--muted);background:#f9fafb}
-  </style>
 </head>
 <body>
   <div class="container">
