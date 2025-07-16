@@ -115,8 +115,8 @@
   <div class="container">
     <!-- 🚀 Hero Section with avatar -->
     <header id="top">
-      <!-- Replace assets/profile.jpg with your portrait path -->
-      <img class="avatar" src="assets/profile.jpg" alt="Portrait of YOUR NAME" />
+      <!-- 🔄 Replace the src with your uploaded file's path -->
+      <img class="avatar" src="assets/profile.png" alt="Portrait of YOUR NAME" />
 
       <h1>Hi, I’m <strong>YOUR NAME</strong> 👋</h1>
       <p>A short tagline that captures what you do.</p>
@@ -148,6 +148,12 @@
           <div class="card">
             <div class="card-title">Project Three</div>
             <p>Highlight the impact or tech stack.</p>
+            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
+          </div>
+          <!-- 🆕 New project card -->
+          <div class="card">
+            <div class="card-title">Project Four</div>
+            <p>Describe the challenge solved and key results.</p>
             <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
           </div>
         </div>
@@ -183,23 +189,4 @@
     <footer>
       © <span id="year"></span> YOUR NAME • Built with GitHub Pages
     </footer>
-  </div>
-
-  <script>
-    // Update year automatically
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ✨ Fade-in animation for project cards
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.card').forEach(card => observer.observe(card));
-  </script>
-</body>
-</html>
+  </
