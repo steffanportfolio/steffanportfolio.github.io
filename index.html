@@ -4,120 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Name | Portfolio</title>
-  <!-- Quick-start styles; consider extracting to styles.css later -->
+  <!-- Quick‑start styles; consider extracting to styles.css later -->
   <style>
     :root {
       --accent: #3b82f6;
-      --bg: #f3f4f6; /* base muted gray */
+      --bg: #f3f4f6;
       --text: #111827;
       --muted: #6b7280;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: var(--bg);
-      /* 🎨 diagonal stripe texture */
-      background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.05) 0 2px, transparent 2px 28px);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 2rem 1rem;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:var(--bg);
+      background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.05) 0 2px,transparent 2px 28px);
+      color:var(--text);
+      line-height:1.6;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:2rem 1rem;
     }
-    /* ✨ Rounded container */
-    .container {
-      background: #ffffff;
-      border-radius: 1.25rem; /* 20px */
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      width: 100%;
-      max-width: 900px;
-      overflow: hidden; /* keeps rounded edges clean */
+    /* container */
+    .container{
+      background:#fff;
+      border-radius:1.25rem;
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+      width:100%;
+      max-width:900px;
+      overflow:hidden;
     }
-    header {
-      padding: 4rem 1rem 3rem;
-      text-align: center;
+    header{padding:4rem 1rem 3rem;text-align:center}
+    /* avatar */
+    .avatar{
+      width:140px;height:140px;border-radius:50%;object-fit:cover;
+      border:4px solid var(--accent);
+      display:block;margin:0 auto 1.5rem;
     }
-    /* ◉ Avatar circle */
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--accent);
-      display: block;
-      margin: 0 auto 1.5rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    header p { font-size: 1.25rem; color: var(--muted); }
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      list-style: none;
-      margin-top: 1.5rem;
-    }
-    nav a {
-      display: inline-block; /* so transform affects size */
-      text-decoration: none;
-      font-weight: 500;
-      color: var(--text);
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-    nav a:hover {
-      color: var(--accent);
-      transform: scale(1.1);
-    }
+    header h1{font-size:2.5rem;font-weight:700;margin-bottom:.5rem}
+    header p{font-size:1.25rem;color:var(--muted)}
+    nav ul{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;list-style:none;margin-top:1.5rem}
+    nav a{display:inline-block;text-decoration:none;font-weight:500;color:var(--text);transition:transform .2s,color .2s}
+    nav a:hover{color:var(--accent);transform:scale(1.1)}
 
-    main section { padding: 4rem 1rem; max-width: 800px; margin: auto; }
-    h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+    main section{padding:4rem 1rem;max-width:800px;margin:auto}
+    h2{font-size:1.75rem;margin-bottom:1rem}
 
-    /* 🌟 Project cards */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .card {
-      background: #ffffff;
-      border-radius: 0.75rem;
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
-      transform: translateY(30px);
-      opacity: 0;
-      transition: transform 0.45s ease-out, opacity 0.45s ease-out, box-shadow 0.2s ease;
+    /* project cards */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+    .card{
+      background:#fff;border-radius:.75rem;padding:1.25rem 1.5rem;
+      box-shadow:0 6px 16px rgba(0,0,0,.04);
+      transform:translateY(30px);
+      opacity:0;
+      transition:transform .45s ease-out,opacity .45s ease-out,box-shadow .2s ease;
     }
-    .card.visible { transform: translateY(0); opacity: 1; }
-    .card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.08); transform: translateY(-4px) scale(1.02); }
-    .card-title { font-weight: 600; }
-    .card-links { margin-top: 0.5rem; }
-    .card-links a { color: var(--accent); text-decoration: none; font-size: 0.875rem; margin-right: 0.5rem; transition: transform 0.2s ease; }
-    .card-links a:hover { transform: scale(1.05); }
+    .js-enabled .card.visible{transform:translateY(0);opacity:1}
+    .card:hover{box-shadow:0 10px 25px rgba(0,0,0,.08);transform:translateY(-4px) scale(1.02)}
+    .card-title{font-weight:600}
+    .card-links{margin-top:.5rem}
+    .card-links a{color:var(--accent);text-decoration:none;font-size:.875rem;margin-right:.5rem;transition:transform .2s}
+    .card-links a:hover{transform:scale(1.05)}
 
-    /* Skills chips */
-    .skills span {
-      display: inline-block;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      margin: 0.25rem;
-      font-size: 0.9rem;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .skills span:hover { transform: scale(1.05); background: var(--accent); color: #fff; }
+    /* skills chips */
+    .skills span{display:inline-block;border:1px solid var(--accent);border-radius:999px;padding:.25rem .75rem;margin:.25rem;font-size:.9rem;transition:transform .2s,background .2s}
+    .skills span:hover{transform:scale(1.05);background:var(--accent);color:#fff}
 
-    footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--muted); background: #f9fafb; }
+    footer{text-align:center;padding:2rem 1rem;font-size:.875rem;color:var(--muted);background:#f9fafb}
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- 🚀 Hero Section with avatar -->
     <header id="top">
-      <!-- 🔄 Replace the src with your uploaded file's path -->
+      <!-- 📸 place your image at assets/profile.png or adjust src -->
       <img class="avatar" src="assets/profile.png" alt="Portrait of YOUR NAME" />
-
       <h1>Hi, I’m <strong>YOUR NAME</strong> 👋</h1>
       <p>A short tagline that captures what you do.</p>
       <nav>
@@ -131,53 +91,26 @@
     </header>
 
     <main>
-      <!-- 🌟 Projects -->
       <section id="projects">
         <h2>🌟 Projects</h2>
         <div class="projects">
-          <div class="card">
-            <div class="card-title">Project One</div>
-            <p>A concise explanation of the problem and outcome.</p>
-            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
-          </div>
-          <div class="card">
-            <div class="card-title">Project Two</div>
-            <p>Short description of what it does.</p>
-            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
-          </div>
-          <div class="card">
-            <div class="card-title">Project Three</div>
-            <p>Highlight the impact or tech stack.</p>
-            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
-          </div>
-          <!-- 🆕 New project card -->
-          <div class="card">
-            <div class="card-title">Project Four</div>
-            <p>Describe the challenge solved and key results.</p>
-            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
-          </div>
+          <div class="card"><div class="card-title">Project One</div><p>A concise explanation of the problem and outcome.</p><div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div></div>
+          <div class="card"><div class="card-title">Project Two</div><p>Short description of what it does.</p><div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div></div>
+          <div class="card"><div class="card-title">Project Three</div><p>Highlight the impact or tech stack.</p><div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div></div>
+          <div class="card"><div class="card-title">Project Four</div><p>Describe the challenge solved and key results.</p><div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div></div>
         </div>
       </section>
 
-      <!-- 🛠️ Skills -->
       <section id="skills">
         <h2>🛠️ Skills</h2>
-        <p class="skills">
-          <span>JavaScript</span>
-          <span>TypeScript</span>
-          <span>React</span>
-          <span>Node.js</span>
-          <span>SQL</span>
-        </p>
+        <p class="skills"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>SQL</span></p>
       </section>
 
-      <!-- 👤 About -->
       <section id="about">
         <h2>👤 About</h2>
         <p>A brief paragraph about your background, interests, and what you’re looking for.</p>
       </section>
 
-      <!-- ✉️ Contact -->
       <section id="contact">
         <h2>✉️ Contact</h2>
         <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
@@ -186,7 +119,24 @@
       </section>
     </main>
 
-    <footer>
-      © <span id="year"></span> YOUR NAME • Built with GitHub Pages
-    </footer>
-  </
+    <footer>© <span id="year"></span> YOUR NAME • Built with GitHub Pages</footer>
+  </div>
+
+  <script>
+    // add JS-enabled class to body for CSS fallback
+    document.documentElement.classList.add('js-enabled');
+    // Year update
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // IntersectionObserver to reveal cards
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.15});
+    document.querySelectorAll('.card').forEach(c => observer.observe(c));
+  </script>
+</body>
+</html>
