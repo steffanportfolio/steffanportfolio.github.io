@@ -22,7 +22,7 @@
 
     .avatar {
       width: 100%;
-      max-width: 420px;
+      max-width: 350px;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       object-fit: cover;
