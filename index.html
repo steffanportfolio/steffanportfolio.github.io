@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name | Portfolio</title>
+  <!-- Quick‑start styles; move to styles.css when ready -->
+  <style>
+    :root {
+      --accent: #3b82f6;
+      --bg: #f9fafb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    header p { font-size: 1.25rem; color: var(--muted); }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text);
+    }
+    nav a:hover { color: var(--accent); }
+
+    main section {
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .projects li { margin-bottom: 0.75rem; }
+    .skills span {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      margin: 0.25rem;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- 🚀 Hero Section -->
+  <header id="top">
+    <h1>Hi, I’m <strong>YOUR NAME</strong> 👋</h1>
+    <p>A short tagline that captures what you do.</p>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 🌟 Projects -->
+    <section id="projects">
+      <h2>🌟 Projects</h2>
+      <ul class="projects">
+        <li><strong>Project One</strong> – one‑sentence summary. <a href="#" target="_blank">Live</a> · <a href="#" target="_blank">Code</a></li>
+        <li><strong>Project Two</strong> – …</li>
+        <li><strong>Project Three</strong> – …</li>
+      </ul>
+    </section>
+
+    <!-- 🛠️ Skills -->
+    <section id="skills">
+      <h2>🛠️ Skills</h2>
+      <p class="skills">
+        <span>JavaScript</span>
+        <span>TypeScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>SQL</span>
+      </p>
+    </section>
+
+    <!-- 👤 About -->
+    <section id="about">
+      <h2>👤 About</h2>
+      <p>A brief paragraph about your background, interests, and what you’re looking for.</p>
+    </section>
+
+    <!-- ✉️ Contact -->
+    <section id="contact">
+      <h2>✉️ Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p><a href="assets/resume.pdf" target="_blank">Download résumé (PDF)</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> YOUR NAME • Built with GitHub Pages
+  </footer>
+
+  <script>
+    // Update year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
