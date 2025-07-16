@@ -8,7 +8,7 @@
   <style>
     :root {
       --accent: #3b82f6;
-      --bg: #f3f4f6;
+      --bg: #f3f4f6; /* base muted gray */
       --text: #111827;
       --muted: #6b7280;
     }
@@ -16,6 +16,11 @@
     body {
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       background: var(--bg);
+      /* 🎨 diagonal wobbly stripe pattern */
+      background-image:
+        repeating-linear-gradient(135deg,
+          rgba(0,0,0,0.05) 0 2px,
+          transparent 2px 28px);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -72,13 +77,42 @@
       font-size: 1.75rem;
       margin-bottom: 1rem;
     }
-    .projects li { margin-bottom: 0.75rem; }
-    .projects a {
-      text-decoration: none;
+
+    /* 🌟 Project cards */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: transform 0.45s ease-out, opacity 0.45s ease-out, box-shadow 0.2s ease;
+    }
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transform: translateY(-4px) scale(1.02);
+    }
+    .card-title { font-weight: 600; }
+    .card-links { margin-top: 0.5rem; }
+    .card-links a {
       color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-right: 0.5rem;
       transition: transform 0.2s ease;
     }
-    .projects a:hover { transform: scale(1.05); }
+    .card-links a:hover { transform: scale(1.05); }
+
+    /* Skills chips */
     .skills span {
       display: inline-block;
       border: 1px solid var(--accent);
@@ -89,6 +123,7 @@
       transition: transform 0.2s ease, background 0.2s ease;
     }
     .skills span:hover { transform: scale(1.05); background: var(--accent); color: #fff; }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -100,13 +135,10 @@
 </head>
 <body>
   <div class="container">
-    
-    
-    
-    <!--                                                          🚀 Hero Section                                                                            -->
+    <!-- 🚀 Hero Section -->
     <header id="top">
-      <h1>Hi, I’m <strong>Steffan Jones</strong> 👋</h1>
-      <p>Track and Field athlete, and Harvard Mechanical Engineering Graduate</p>
+      <h1>Hi, I’m <strong>YOUR NAME</strong> 👋</h1>
+      <p>A short tagline that captures what you do.</p>
       <nav>
         <ul>
           <li><a href="#projects">Projects</a></li>
@@ -118,16 +150,26 @@
     </header>
 
     <main>
-      
-      
-      <!--                                                           🌟 Projects                                                                             -->
+      <!-- 🌟 Projects -->
       <section id="projects">
         <h2>🌟 Projects</h2>
-        <ul class="projects">
-          <li><strong>Project One</strong> – one-sentence summary. <a href="#" target="_blank">Live</a> · <a href="#" target="_blank">Code</a></li>
-          <li><strong>Project Two</strong> – …</li>
-          <li><strong>Project Three</strong> – …</li>
-        </ul>
+        <div class="projects">
+          <div class="card">
+            <div class="card-title">Project One</div>
+            <p>A concise explanation of the problem and outcome.</p>
+            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Project Two</div>
+            <p>Short description of what it does.</p>
+            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Project Three</div>
+            <p>Highlight the impact or tech stack.</p>
+            <div class="card-links"><a href="#" target="_blank">Live</a><a href="#" target="_blank">Code</a></div>
+          </div>
+        </div>
       </section>
 
       <!-- 🛠️ Skills -->
@@ -165,6 +207,18 @@
   <script>
     // Update year automatically
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ✨ Fade-in animation for project cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
