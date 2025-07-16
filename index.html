@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Name | Portfolio</title>
-  <!-- Quick‑start styles; move to styles.css when ready -->
+  <!-- Quick-start styles; move to styles.css when ready -->
   <style>
     :root {
       --accent: #3b82f6;
-      --bg: #f9fafb;
+      --bg: #f3f4f6;
       --text: #111827;
       --muted: #6b7280;
     }
@@ -18,9 +18,23 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    /* ✨ Rounded container */
+    .container {
+      background: #ffffff;
+      border-radius: 1.25rem; /* 20px */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      width: 100%;
+      max-width: 900px;
+      overflow: hidden; /* keeps rounded edges clean */
     }
     header {
-      padding: 4rem 1rem;
+      padding: 4rem 1rem 3rem;
       text-align: center;
     }
     header h1 {
@@ -38,11 +52,16 @@
       margin-top: 1.5rem;
     }
     nav a {
+      display: inline-block; /* so transform affects size */
       text-decoration: none;
       font-weight: 500;
       color: var(--text);
+      transition: transform 0.2s ease, color 0.2s ease;
     }
-    nav a:hover { color: var(--accent); }
+    nav a:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
 
     main section {
       padding: 4rem 1rem;
@@ -54,6 +73,12 @@
       margin-bottom: 1rem;
     }
     .projects li { margin-bottom: 0.75rem; }
+    .projects a {
+      text-decoration: none;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+    .projects a:hover { transform: scale(1.05); }
     .skills span {
       display: inline-block;
       border: 1px solid var(--accent);
@@ -61,71 +86,76 @@
       padding: 0.25rem 0.75rem;
       margin: 0.25rem;
       font-size: 0.9rem;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
+    .skills span:hover { transform: scale(1.05); background: var(--accent); color: #fff; }
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.875rem;
       color: var(--muted);
+      background: #f9fafb;
     }
   </style>
 </head>
 <body>
-  <!-- 🚀 Hero Section -->
-  <header id="top">
-    <h1>Hi, I’m <strong>YOUR NAME</strong> 👋</h1>
-    <p>A short tagline that captures what you do.</p>
-    <nav>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <!-- 🚀 Hero Section -->
+    <header id="top">
+      <h1>Hi, I’m <strong>YOUR NAME</strong> 👋</h1>
+      <p>A short tagline that captures what you do.</p>
+      <nav>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <!-- 🌟 Projects -->
-    <section id="projects">
-      <h2>🌟 Projects</h2>
-      <ul class="projects">
-        <li><strong>Project One</strong> – one‑sentence summary. <a href="#" target="_blank">Live</a> · <a href="#" target="_blank">Code</a></li>
-        <li><strong>Project Two</strong> – …</li>
-        <li><strong>Project Three</strong> – …</li>
-      </ul>
-    </section>
+    <main>
+      <!-- 🌟 Projects -->
+      <section id="projects">
+        <h2>🌟 Projects</h2>
+        <ul class="projects">
+          <li><strong>Project One</strong> – one-sentence summary. <a href="#" target="_blank">Live</a> · <a href="#" target="_blank">Code</a></li>
+          <li><strong>Project Two</strong> – …</li>
+          <li><strong>Project Three</strong> – …</li>
+        </ul>
+      </section>
 
-    <!-- 🛠️ Skills -->
-    <section id="skills">
-      <h2>🛠️ Skills</h2>
-      <p class="skills">
-        <span>JavaScript</span>
-        <span>TypeScript</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>SQL</span>
-      </p>
-    </section>
+      <!-- 🛠️ Skills -->
+      <section id="skills">
+        <h2>🛠️ Skills</h2>
+        <p class="skills">
+          <span>JavaScript</span>
+          <span>TypeScript</span>
+          <span>React</span>
+          <span>Node.js</span>
+          <span>SQL</span>
+        </p>
+      </section>
 
-    <!-- 👤 About -->
-    <section id="about">
-      <h2>👤 About</h2>
-      <p>A brief paragraph about your background, interests, and what you’re looking for.</p>
-    </section>
+      <!-- 👤 About -->
+      <section id="about">
+        <h2>👤 About</h2>
+        <p>A brief paragraph about your background, interests, and what you’re looking for.</p>
+      </section>
 
-    <!-- ✉️ Contact -->
-    <section id="contact">
-      <h2>✉️ Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-      <p><a href="assets/resume.pdf" target="_blank">Download résumé (PDF)</a></p>
-    </section>
-  </main>
+      <!-- ✉️ Contact -->
+      <section id="contact">
+        <h2>✉️ Contact</h2>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+        <p><a href="assets/resume.pdf" target="_blank">Download résumé (PDF)</a></p>
+      </section>
+    </main>
 
-  <footer>
-    © <span id="year"></span> YOUR NAME • Built with GitHub Pages
-  </footer>
+    <footer>
+      © <span id="year"></span> YOUR NAME • Built with GitHub Pages
+    </footer>
+  </div>
 
   <script>
     // Update year automatically
