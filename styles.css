@@ -1,4 +1,3 @@
-<style>
     :root {
       --accent: #3b82f6;
       --accent-hover: #2563eb; /* slightly darker */
@@ -50,4 +49,4 @@
     #contact p{margin-bottom:.75rem}
 
     footer{text-align:center;padding:2rem 1rem;font-size:.875rem;color:var(--muted);background:#f9fafb}
-  </style>
+ 
