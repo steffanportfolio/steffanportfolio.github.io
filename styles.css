@@ -57,17 +57,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem 1rem;
       padding: 1rem 0;
     }
     .skills span {
-      flex: 1 1 auto; /* Let spans grow and shrink naturally */
+      flex: 0 1 auto; /* Let spans grow and shrink naturally */
       text-align: center;
       border: 1px solid var(--accent);
       border-radius: 999px;
-      padding: 0.25rem 0.75rem;
+      padding: 0.4rem 0.9rem;
       font-size: 0.9rem;
-      margin: 0.25rem;
+      margin: 0.4rem;
       transition: transform 0.2s, background 0.2s;
     }
 
