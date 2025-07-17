@@ -61,7 +61,9 @@
     .card-links a{color:var(--accent);text-decoration:none;font-size:.875rem;margin-right:.5rem;transition:transform .2s}
     .card-links a:hover{transform:scale(1.05)}
 
-    .skills span{display:inline-block;border:1px solid var(--accent);border-radius:999px;padding:.25rem .75rem;margin:.25rem;font-size:.9rem;transition:transform .2s,background .2s}
+    .skills span{display:inline-block;border:1px solid var(--accent);border-radius:999px;
+                 padding:.25rem .75rem;margin:.25rem;font-size:.9rem;
+                 transition:transform .2s,background .2s;text-align: center;}
     .skills span:hover{transform:scale(1.05);background:var(--accent);color:#fff}
 
     /* button style */
