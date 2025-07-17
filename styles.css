@@ -56,18 +56,18 @@
     .skills {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
       gap: 0.5rem 1rem;
       padding: 1rem 0;
     }
     .skills span {
-      flex: 1 1 calc(33.333% - 1rem); /* try 50% or 25% if you want more or fewer per row */
-      min-width: fit-content;
+      flex: 1 1 auto; /* Let spans grow and shrink naturally */
       text-align: center;
       border: 1px solid var(--accent);
       border-radius: 999px;
       padding: 0.25rem 0.75rem;
       font-size: 0.9rem;
+      margin: 0.25rem;
       transition: transform 0.2s, background 0.2s;
     }
 
