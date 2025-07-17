@@ -53,22 +53,10 @@
     .card-links a{color:var(--accent);text-decoration:none;font-size:.875rem;margin-right:.5rem;transition:transform .2s}
     .card-links a:hover{transform:scale(1.05)}
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 1rem 0;
-    }
-    .skills span {
-      flex: 0 1 auto; /* Let spans grow and shrink naturally */
-      text-align: center;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      padding: 0.4rem 0.9rem;
-      font-size: 0.9rem;
-      margin: 0.4rem;
-      transition: transform 0.2s, background 0.2s;
-    }
+    .skills {display: grid;grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));gap: 0.75rem;padding: 1rem 0;}
+
+    .skills span {flex: 0 1 auto; /* Let spans grow and shrink naturally */
+      text-align: center;border: 1px solid var(--accent);border-radius: 999px;padding: 0.4rem 0.9rem;font-size: 0.9rem;margin: 0.4rem;transition: transform 0.2s, background 0.2s;}
 
     .skills span:hover{transform:scale(1.05);background:var(--accent);color:#fff}
 
