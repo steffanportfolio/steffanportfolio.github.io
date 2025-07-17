@@ -96,4 +96,14 @@
       text-justify: inter-word;
     }
 
+    .project-image {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 1rem; /* optional, adds rounded corners */
+    }
+
+
  
