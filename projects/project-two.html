@@ -34,7 +34,29 @@
 
       <section>
         <h2>Images</h2>
-        
+          <div class="carousel">
+            <div class="carousel-media active" data-caption="Spinning LED fan in action.">
+              <img src="../assets/3DFanLayout.png" alt="3D Fan LED Strip">
+            </div>
+          
+            <div class="carousel-media" data-caption="Microcontroller and breadboard powering the fan.">
+              <img src="../assets/3DFanCase.JPG" alt="3D Fan Electronics">
+            </div>
+          
+            <div class="carousel-media" data-caption="Live video of the 3D fan running.">
+              <video controls muted>
+                <source src="../assets/IMG_0587.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          
+            <div class="carousel-controls">
+              <button onclick="prevSlide()">⟵</button>
+              <p id="carousel-caption"></p>
+              <button onclick="nextSlide()">⟶</button>
+            </div>
+          </div>
+
       </section>
     </main>
   </div>
