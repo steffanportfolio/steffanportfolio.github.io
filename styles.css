@@ -124,5 +124,52 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
+    .carousel {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 640px;
+      position: relative;
+    }
+    
+    .carousel-media {
+      display: none;
+    }
+    
+    .carousel-media.active {
+      display: block;
+    }
+    
+    .carousel-media img,
+    .carousel-media video {
+      width: 100%;
+      border-radius: 1rem;
+      border: 2px solid var(--accent);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+    
+    .carousel-controls button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    
+    #carousel-caption {
+      flex: 1;
+      text-align: center;
+      font-size: 0.95rem;
+      margin: 0 1rem;
+  color: var(--text);
+}
 
  
