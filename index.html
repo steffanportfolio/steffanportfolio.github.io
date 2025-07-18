@@ -93,5 +93,33 @@
     const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}})},{threshold:.15});
     document.querySelectorAll('.card').forEach(c=>observer.observe(c));
   </script>
+  <script>
+  const slides = document.querySelectorAll('.carousel-media');
+  const caption = document.getElementById('carousel-caption');
+    let current = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      caption.textContent = slides[index].dataset.caption;
+    }
+  
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+  
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  
+    // Initialize caption on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(current);
+    });
+  </script>
+
 </body>
 </html>
