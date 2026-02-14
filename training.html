@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Log | Journey to 2032</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Journey to 2032</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="training.html" class="active">Training Log</a></li>
+                <li><a href="goals.html">Goals & Progress</a></li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="gym.html">Gym Program</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Training Log</h1>
+            <p class="subtitle">Track every session, build consistency</p>
+        </section>
+
+        <div class="log-grid">
+            <!-- Log New Session -->
+            <div class="card log-form-card">
+                <h2>Log Session</h2>
+                <form id="sessionForm">
+                    <div class="form-group">
+                        <label for="sessionDate">Date</label>
+                        <input type="date" id="sessionDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionType">Session Type</label>
+                        <select id="sessionType" required>
+                            <option value="">Select type...</option>
+                            <option value="track">Track Session</option>
+                            <option value="gym">Gym Session</option>
+                            <option value="recovery">Recovery/Easy Run</option>
+                            <option value="race">Competition/Time Trial</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="trackDetailsGroup" style="display: none;">
+                        <label for="trackFocus">Track Focus</label>
+                        <select id="trackFocus">
+                            <option value="">Select focus...</option>
+                            <option value="speed">Speed (200m/300m reps)</option>
+                            <option value="speed-endurance">Speed Endurance (400m/500m/600m)</option>
+                            <option value="special-endurance">Special Endurance (150m/200m/300m short rest)</option>
+                            <option value="extensive-tempo">Extensive Tempo</option>
+                            <option value="intensive-tempo">Intensive Tempo</option>
+                            <option value="800m-specific">800m Specific</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionWorkout">Workout Details</label>
+                        <textarea id="sessionWorkout" rows="4" placeholder="e.g., 6x400m @ 54s (3min rest), felt strong on first 4, tired on last 2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionQuality">Session Quality</label>
+                        <div class="quality-rating">
+                            <label><input type="radio" name="quality" value="5"> 🔥 Excellent</label>
+                            <label><input type="radio" name="quality" value="4"> ✅ Good</label>
+                            <label><input type="radio" name="quality" value="3"> 👍 Okay</label>
+                            <label><input type="radio" name="quality" value="2"> 😐 Below Par</label>
+                            <label><input type="radio" name="quality" value="1"> 😞 Poor</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Key Focus Reminders</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" class="focus-reminder" value="posture"> Maintained upright posture</label>
+                            <label><input type="checkbox" class="focus-reminder" value="relaxation"> Stayed relaxed through shoulders</label>
+                            <label><input type="checkbox" class="focus-reminder" value="arm-drive"> Strong arm drive</label>
+                            <label><input type="checkbox" class="focus-reminder" value="knee-lift"> High knee lift</label>
+                            <label><input type="checkbox" class="focus-reminder" value="acceleration"> Controlled acceleration</label>
+                            <label><input type="checkbox" class="focus-reminder" value="finish"> Strong finish through line</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sessionNotes">Notes & Improvements</label>
+                        <textarea id="sessionNotes" rows="3" placeholder="What went well? What needs work? How did you feel?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whoopRecovery">Whoop Recovery %</label>
+                        <input type="number" id="whoopRecovery" min="0" max="100" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whoopStrain">Whoop Strain</label>
+                        <input type="number" id="whoopStrain" min="0" max="21" step="0.1" placeholder="Optional">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Log Session</button>
+                </form>
+            </div>
+
+            <!-- Session History -->
+            <div class="card history-card">
+                <h2>Session History</h2>
+                <div class="filter-bar">
+                    <select id="filterType">
+                        <option value="all">All Sessions</option>
+                        <option value="track">Track Only</option>
+                        <option value="gym">Gym Only</option>
+                        <option value="race">Races Only</option>
+                    </select>
+                    <select id="filterPeriod">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30">Last 30 Days</option>
+                        <option value="90">Last 90 Days</option>
+                        <option value="all">All Time</option>
+                    </select>
+                </div>
+                <div id="sessionHistory">
+                    <p class="no-data">No sessions logged yet. Log your first session above!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="training.js"></script>
+</body>
+</html>

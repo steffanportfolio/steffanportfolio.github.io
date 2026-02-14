@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Program | Journey to 2032</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Journey to 2032</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="training.html">Training Log</a></li>
+                <li><a href="goals.html">Goals & Progress</a></li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="gym.html" class="active">Gym Program</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Gym Program</h1>
+            <p class="subtitle">Building strength and power for 400m/800m excellence</p>
+        </section>
+
+        <!-- Current Program -->
+        <div class="card">
+            <h2>Current Program</h2>
+            <form id="currentProgramForm">
+                <div class="form-group">
+                    <label for="programPhase">Current Training Phase</label>
+                    <select id="programPhase">
+                        <option value="general-prep">General Preparation (Building Base)</option>
+                        <option value="specific-prep">Specific Preparation (Speed/Power Focus)</option>
+                        <option value="competition">Competition Phase (Maintenance)</option>
+                        <option value="transition">Transition/Recovery</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sessionPerWeek">Gym Sessions Per Week</label>
+                    <input type="number" id="sessionPerWeek" min="1" max="5" value="2">
+                </div>
+                <div class="form-group">
+                    <label for="programNotes">Program Notes</label>
+                    <textarea id="programNotes" rows="3" placeholder="Any specific focus areas or modifications..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Program Settings</button>
+            </form>
+        </div>
+
+        <!-- Recommended Programs by Phase -->
+        <div class="card">
+            <h2>Recommended Programs for 400m/800m</h2>
+            
+            <div class="program-phase">
+                <h3>🏗️ General Preparation (Oct-Dec)</h3>
+                <p class="phase-description">Build strength foundation, muscle mass, work capacity. Focus on compound movements with moderate-high volume.</p>
+                
+                <div class="workout-template">
+                    <h4>Day 1: Lower Body Strength</h4>
+                    <ul>
+                        <li>Back Squat: 4x6-8 reps @ 75-80% 1RM</li>
+                        <li>Romanian Deadlift: 3x8-10</li>
+                        <li>Bulgarian Split Squat: 3x8 each leg</li>
+                        <li>Leg Curl: 3x10-12</li>
+                        <li>Calf Raises: 3x15</li>
+                        <li>Core: Plank variations 3x45s</li>
+                    </ul>
+                </div>
+
+                <div class="workout-template">
+                    <h4>Day 2: Upper Body + Power</h4>
+                    <ul>
+                        <li>Bench Press: 4x6-8</li>
+                        <li>Bent-Over Row: 3x8-10</li>
+                        <li>Overhead Press: 3x8</li>
+                        <li>Pull-ups: 3x max reps</li>
+                        <li>Medicine Ball Slams: 3x10 (explosive)</li>
+                        <li>Core: Anti-rotation press 3x10 each side</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="program-phase">
+                <h3>⚡ Specific Preparation (Jan-Mar)</h3>
+                <p class="phase-description">Transition to power and speed-strength. Lower volume, higher intensity, more explosive movements. Key phase for 400m/800m athletes.</p>
+                
+                <div class="workout-template">
+                    <h4>Day 1: Power & Acceleration</h4>
+                    <ul>
+                        <li>Power Clean: 5x3 @ 80-85% 1RM (EXPLOSIVE)</li>
+                        <li>Box Jumps: 4x5 (max height, full recovery)</li>
+                        <li>Trap Bar Deadlift: 4x4 @ 85%</li>
+                        <li>Depth Jumps: 3x5</li>
+                        <li>Single-Leg Bounds: 3x8 each leg</li>
+                        <li>Core: Med ball rotational throws 3x8</li>
+                    </ul>
+                </div>
+
+                <div class="workout-template">
+                    <h4>Day 2: Speed-Strength Lower</h4>
+                    <ul>
+                        <li>Jump Squat: 5x5 @ 30-40% bodyweight (MAX SPEED)</li>
+                        <li>Single-Leg Squat: 3x6 each leg</li>
+                        <li>Nordic Curls: 3x6-8</li>
+                        <li>Lateral Bounds: 3x10 each direction</li>
+                        <li>Heavy Sled Push: 4x20m</li>
+                        <li>Core: Ab wheel rollouts 3x10</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="program-phase">
+                <h3>🏆 Competition Phase (Apr-Sep)</h3>
+                <p class="phase-description">Maintenance only. Keep strength, avoid fatigue. 1-2 sessions per week, low volume.</p>
+                
+                <div class="workout-template">
+                    <h4>Maintenance Session (once or twice weekly)</h4>
+                    <ul>
+                        <li>Back Squat or Trap Bar Deadlift: 3x4 @ 80%</li>
+                        <li>Power Clean: 3x3 @ 75%</li>
+                        <li>Box Jumps: 3x4</li>
+                        <li>Single-Leg Work: 2x6 each leg</li>
+                        <li>Core: 2-3 exercises x 8-10 reps</li>
+                    </ul>
+                    <p class="phase-note">⚠️ Keep intensity high, volume LOW. Should feel fresh, not fatigued.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exercise Library for 400m/800m -->
+        <div class="card">
+            <h2>Exercise Library - 400m/800m Specific</h2>
+            
+            <div class="exercise-category">
+                <h3>Key Compound Lifts</h3>
+                <div class="exercise-grid">
+                    <div class="exercise-card">
+                        <h4>Back Squat</h4>
+                        <p><strong>Why:</strong> Foundation for leg strength, force production</p>
+                        <p><strong>Focus:</strong> Depth, controlled eccentric, explosive concentric</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Power Clean</h4>
+                        <p><strong>Why:</strong> Triple extension power (ankle, knee, hip) - mimics sprint mechanics</p>
+                        <p><strong>Focus:</strong> Speed of bar, full hip extension</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Trap Bar Deadlift</h4>
+                        <p><strong>Why:</strong> Posterior chain power, safer than conventional deadlift</p>
+                        <p><strong>Focus:</strong> Explosive hip drive</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Romanian Deadlift</h4>
+                        <p><strong>Why:</strong> Hamstring strength (crucial for 400m/800m finish)</p>
+                        <p><strong>Focus:</strong> Eccentric control, hamstring stretch</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h3>Plyometrics & Power</h3>
+                <div class="exercise-grid">
+                    <div class="exercise-card">
+                        <h4>Box Jumps</h4>
+                        <p><strong>Why:</strong> Reactive strength, vertical power</p>
+                        <p><strong>Focus:</strong> Max height, soft landing, full recovery between reps</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Depth Jumps</h4>
+                        <p><strong>Why:</strong> Reactive strength, rapid force development</p>
+                        <p><strong>Focus:</strong> Minimal ground contact time</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Bounds (Single & Double Leg)</h4>
+                        <p><strong>Why:</strong> Horizontal power (directly transfers to sprinting)</p>
+                        <p><strong>Focus:</strong> Distance per bound, aggressive arm drive</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Medicine Ball Throws</h4>
+                        <p><strong>Why:</strong> Rotational power, core explosiveness</p>
+                        <p><strong>Focus:</strong> Maximum velocity of throw</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h3>Unilateral (Single-Leg)</h3>
+                <div class="exercise-grid">
+                    <div class="exercise-card">
+                        <h4>Bulgarian Split Squat</h4>
+                        <p><strong>Why:</strong> Address strength imbalances, knee stability</p>
+                        <p><strong>Focus:</strong> Front leg driving force</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Single-Leg RDL</h4>
+                        <p><strong>Why:</strong> Balance, hamstring strength, hip stability</p>
+                        <p><strong>Focus:</strong> Maintain level hips</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Step-Ups</h4>
+                        <p><strong>Why:</strong> Knee drive power (late acceleration phase)</p>
+                        <p><strong>Focus:</strong> Explosive drive off front foot</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-category">
+                <h3>Injury Prevention & Prehab</h3>
+                <div class="exercise-grid">
+                    <div class="exercise-card">
+                        <h4>Nordic Curls</h4>
+                        <p><strong>Why:</strong> Eccentric hamstring strength (prevent strains)</p>
+                        <p><strong>Critical:</strong> Essential for 400m athletes</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Copenhagen Planks</h4>
+                        <p><strong>Why:</strong> Adductor strength (groin injury prevention)</p>
+                        <p><strong>Focus:</strong> Hold 20-30s each side</p>
+                    </div>
+                    <div class="exercise-card">
+                        <h4>Calf Raises (Straight & Bent Knee)</h4>
+                        <p><strong>Why:</strong> Achilles health, ankle stiffness</p>
+                        <p><strong>Focus:</strong> Full range of motion, both variations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Program Builder -->
+        <div class="card">
+            <h2>Build Custom Program</h2>
+            <p class="info-text">Select exercises and build your own program based on your current phase</p>
+            <button class="btn btn-primary" onclick="openProgramBuilder()">Open Program Builder</button>
+        </div>
+
+        <!-- Recovery Recommendations -->
+        <div class="card">
+            <h2>Recovery & Gym Membership</h2>
+            <div class="recovery-options">
+                <div class="recovery-card">
+                    <h3>Current: £35/month (Gym Only)</h3>
+                    <p>Standard gym access</p>
+                </div>
+                <div class="recovery-card recommended">
+                    <h3>Recommended: £55/month (Gym + Recovery)</h3>
+                    <p><strong>Includes 4x sessions in recovery room:</strong></p>
+                    <ul>
+                        <li>Sauna (reduces inflammation, aids recovery)</li>
+                        <li>Ice bath (reduces muscle soreness)</li>
+                        <li>Hot tub (active recovery, relaxation)</li>
+                    </ul>
+                    <p class="recovery-note">💡 <strong>Worth it?</strong> For serious training, recovery is as important as the work itself. Extra £20/month = faster adaptation, better consistency.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="gym.js"></script>
+</body>
+</html>

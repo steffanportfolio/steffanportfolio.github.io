@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Journey to 2032</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Journey to 2032</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="training.html">Training Log</a></li>
+                <li><a href="goals.html">Goals & Progress</a></li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="gym.html">Gym Program</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container portfolio-page">
+        <!-- Hero Section -->
+        <section class="portfolio-hero">
+            <div class="athlete-photo-placeholder">
+                <div class="photo-upload-area" onclick="document.getElementById('photoUpload').click()">
+                    <input type="file" id="photoUpload" accept="image/*" style="display:none" onchange="uploadPhoto(event)">
+                    <div id="athletePhotoDisplay">Click to upload athlete photo</div>
+                </div>
+            </div>
+            <div class="athlete-intro">
+                <h1 id="athleteName">Your Name</h1>
+                <p class="athlete-title">400m/800m Specialist | Wales, GB</p>
+                <div class="social-links">
+                    <a href="#" id="instagramLink" class="social-link" contenteditable="true">@your_instagram</a>
+                </div>
+                <button class="btn btn-secondary" onclick="editProfile()">Edit Profile</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <div class="card">
+            <h2>About</h2>
+            <div id="aboutText" contenteditable="true" class="editable-content">
+                <p>Former NCAA Division I athlete now competing at the national level in Great Britain. Specializing in 400m with emerging potential in 800m events. Training under coach Darrell Maynard in Cardiff with a clear pathway to world-class performance by 2032.</p>
+                <p>Current focus: Building back to top GB status, targeting medal contention at British Championships and establishing international competition presence.</p>
+            </div>
+            <button class="btn btn-primary" onclick="saveAbout()">Save About</button>
+        </div>
+
+        <!-- Personal Bests -->
+        <div class="card">
+            <h2>Personal Bests</h2>
+            <div class="pb-showcase">
+                <div class="pb-showcase-item">
+                    <div class="event-name">200m</div>
+                    <div class="pb-time-large">21.80</div>
+                    <div class="pb-detail">Personal Best</div>
+                </div>
+                <div class="pb-showcase-item featured">
+                    <div class="event-name">400m</div>
+                    <div class="pb-time-large">47.83</div>
+                    <div class="pb-detail">Personal Best</div>
+                    <div class="pb-target">Target: 45.XX (2032)</div>
+                </div>
+                <div class="pb-showcase-item">
+                    <div class="event-name">800m</div>
+                    <div class="pb-time-large">TBD</div>
+                    <div class="pb-detail">Debut Season 2025</div>
+                    <div class="pb-target">Target: Sub-1:46 (2032)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Highlights -->
+        <div class="card">
+            <h2>Career Highlights</h2>
+            <button class="btn btn-secondary" onclick="addHighlight()">Add Highlight</button>
+            <div id="highlightsList" class="highlights-list">
+                <div class="highlight-item">
+                    <div class="highlight-year">2024</div>
+                    <div class="highlight-content">
+                        <strong>NCAA Division I Competition</strong>
+                        <p>Competed at Division I level while completing undergraduate studies</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-year">2025</div>
+                    <div class="highlight-content">
+                        <strong>Return to GB National Competition</strong>
+                        <p>Transitioned to professional training focus with dedicated coaching</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competition Results -->
+        <div class="card">
+            <h2>Competition Results</h2>
+            <button class="btn btn-secondary" onclick="addResult()">Add Result</button>
+            <div id="resultsList" class="results-list">
+                <p class="no-data">Add competition results to showcase your performance</p>
+            </div>
+        </div>
+
+        <!-- Training Philosophy -->
+        <div class="card">
+            <h2>Training Philosophy</h2>
+            <div id="philosophyText" contenteditable="true" class="editable-content">
+                <p>Focused on systematic progression through evidence-based training principles. Combining speed development with endurance work to bridge the 400m and 800m events. Strong emphasis on strength and power development in the gym alongside technical refinement on the track.</p>
+                <p>Working with experienced coaching and utilizing data-driven approaches through Whoop recovery tracking and detailed session analysis to optimize performance gains while managing injury risk.</p>
+            </div>
+            <button class="btn btn-primary" onclick="savePhilosophy()">Save Philosophy</button>
+        </div>
+
+        <!-- Goals & Ambitions -->
+        <div class="card">
+            <h2>Goals & Ambitions</h2>
+            <div class="goals-timeline">
+                <div class="goal-item">
+                    <div class="goal-year">2025-2026</div>
+                    <div class="goal-targets">
+                        <p>🎯 Medal contention at British Championships</p>
+                        <p>🎯 International competition experience (Europe/US)</p>
+                        <p>🎯 Sub-47s in 400m</p>
+                        <p>🎯 Debut sub-1:50 in 800m</p>
+                    </div>
+                </div>
+                <div class="goal-item">
+                    <div class="goal-year">2027-2028</div>
+                    <div class="goal-targets">
+                        <p>🎯 GB team selection</p>
+                        <p>🎯 45.XX in 400m</p>
+                        <p>🎯 Sub-1:46 in 800m</p>
+                        <p>🎯 Olympic qualification pathway</p>
+                    </div>
+                </div>
+                <div class="goal-item highlight">
+                    <div class="goal-year">2032</div>
+                    <div class="goal-targets">
+                        <p>🏆 Los Angeles Olympics</p>
+                        <p>🏆 World-class times: 45.XX (400m) / Sub-1:46 (800m)</p>
+                        <p>🏆 Established international athlete with major sponsorship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Partner With Me -->
+        <div class="card">
+            <h2>Partnership Opportunities</h2>
+            <div id="partnershipText" contenteditable="true" class="editable-content">
+                <p><strong>Why partner with me:</strong></p>
+                <ul>
+                    <li>Clear 6-year development pathway to Olympic-level performance</li>
+                    <li>Systematic, professional approach to training and recovery</li>
+                    <li>Growing presence in UK athletics with international competition aspirations</li>
+                    <li>Engaging with athletics community through social media and competition</li>
+                    <li>Dedicated to representing sponsors with professionalism and integrity</li>
+                </ul>
+                <p><strong>Open to:</strong> Equipment sponsorship, apparel, nutrition products, training facility partnerships, financial support</p>
+            </div>
+            <button class="btn btn-primary" onclick="savePartnership()">Save Partnership Info</button>
+        </div>
+
+        <!-- Contact -->
+        <div class="card">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <span id="emailContact" contenteditable="true">your.email@example.com</span></p>
+                <p><strong>Instagram:</strong> <span id="instagramContact" contenteditable="true">@your_instagram</span></p>
+                <p><strong>Location:</strong> Cardiff, Wales, United Kingdom</p>
+                <p><strong>Coach:</strong> Darrell Maynard</p>
+            </div>
+            <button class="btn btn-primary" onclick="saveContact()">Save Contact Info</button>
+        </div>
+
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>

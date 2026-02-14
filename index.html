@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey to 2032 | Elite Training Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Journey to 2032</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="training.html">Training Log</a></li>
+                <li><a href="goals.html">Goals & Progress</a></li>
+                <li><a href="nutrition.html">Nutrition</a></li>
+                <li><a href="gym.html">Gym Program</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Dashboard</h1>
+            <p class="subtitle">From 47.83 to 45.X | Building towards world-class</p>
+        </section>
+
+        <div class="dashboard-grid">
+            <!-- Current Streak -->
+            <div class="card streak-card">
+                <h2>🔥 Current Streak</h2>
+                <div class="streak-number" id="currentStreak">0</div>
+                <p class="streak-label">consecutive training days</p>
+                <div class="streak-stats">
+                    <div>
+                        <span class="stat-label">Longest Streak</span>
+                        <span class="stat-value" id="longestStreak">0</span>
+                    </div>
+                    <div>
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-value" id="monthSessions">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Training -->
+            <div class="card today-card">
+                <h2>Today's Training</h2>
+                <div id="todayStatus">
+                    <p>No session logged yet today</p>
+                    <a href="training.html" class="btn btn-primary">Log Session</a>
+                </div>
+            </div>
+
+            <!-- Next Competition -->
+            <div class="card competition-card">
+                <h2>Next Competition</h2>
+                <div id="nextCompetition">
+                    <p class="no-data">No upcoming competitions</p>
+                    <a href="goals.html" class="btn btn-secondary">Add Competition</a>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="card stats-card">
+                <h2>Season Progress</h2>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>400m Target: 45.X</span>
+                        <span class="current-pb">PB: 47.83</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%" id="progress400m"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>800m Target: 1:46.00</span>
+                        <span class="current-pb">Not yet competed</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%" id="progress800m"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Sessions -->
+            <div class="card recent-sessions">
+                <h2>Recent Sessions</h2>
+                <div id="recentSessionsList">
+                    <p class="no-data">No sessions logged yet</p>
+                </div>
+                <a href="training.html" class="view-all">View all sessions →</a>
+            </div>
+
+            <!-- Accountability Calendar -->
+            <div class="card calendar-card">
+                <h2>This Month's Accountability</h2>
+                <div id="accountabilityCalendar"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
